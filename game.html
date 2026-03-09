@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>対局練習 | オセロ講座</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">⚫ オセロ講座</a>
+  <a href="lesson1.html">第1講</a>
+  <a href="lesson2.html">第2講</a>
+  <a href="lesson3.html">第3講</a>
+  <a href="lesson4.html">第4講</a>
+  <a href="game.html" class="active">対局練習</a>
+</nav>
+
+<div class="container">
+  <div class="game-layout">
+
+    <!-- ボード -->
+    <div class="game-area">
+      <div class="score-display">
+        <div class="score-side">
+          <div class="score-stone black"></div>
+          <div class="score-num" id="score-black">2</div>
+          <div class="score-label">あなた（黒）</div>
+        </div>
+        <div class="score-divider">—</div>
+        <div class="score-side">
+          <div class="score-stone white"></div>
+          <div class="score-num" id="score-white">2</div>
+          <div class="score-label">AI（白）</div>
+        </div>
+      </div>
+
+      <div class="turn-indicator" id="turn-info">⚫ あなたの番</div>
+      <br>
+
+      <div id="board-wrap">
+        <div id="board"></div>
+      </div>
+    </div>
+
+    <!-- サイドパネル -->
+    <div class="game-panel">
+      <h3>設定</h3>
+
+      <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:0.6rem;">難易度</p>
+      <div class="diff-select">
+        <button class="diff-btn" data-diff="easy">かんたん</button>
+        <button class="diff-btn active" data-diff="normal">ふつう</button>
+        <button class="diff-btn" data-diff="hard">むずかしい</button>
+      </div>
+
+      <button id="new-game-btn">新しいゲーム</button>
+
+      <h3>ヒント</h3>
+      <ul class="hint-list">
+        <li><span class="hint-icon">🏛️</span>四隅を狙おう</li>
+        <li><span class="hint-icon">🚨</span>X打ち（斜め隣）は避ける</li>
+        <li><span class="hint-icon">⚠️</span>C打ち（辺の隣）は慎重に</li>
+        <li><span class="hint-icon">📉</span>開放度の低い手を選ぶ</li>
+        <li><span class="hint-icon">⚫</span>序盤は石を取りすぎない</li>
+        <li><span class="hint-icon">🔒</span>辺や安定石を増やす</li>
+      </ul>
+
+      <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border);">
+        <p style="font-size:0.8rem;color:var(--text-dim);margin-bottom:0.8rem;">緑のドットが合法手。クリックで石を置く。</p>
+        <a href="lesson1.html" style="font-size:0.85rem;color:var(--green-light);text-decoration:none;">📖 講義に戻る</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 結果モーダル -->
+<div class="modal-overlay" id="result-modal">
+  <div class="modal">
+    <h2 id="modal-title"></h2>
+    <p id="modal-sub"></p>
+    <button class="btn btn-primary" id="play-again-btn" style="margin-top:0.5rem;">もう一度</button>
+    <br><br>
+    <a href="index.html" style="font-size:0.85rem;color:var(--text-dim);text-decoration:none;">講座トップへ</a>
+  </div>
+</div>
+
+<footer>今日から強くなれるオセロ講座</footer>
+
+<script src="js/ai.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

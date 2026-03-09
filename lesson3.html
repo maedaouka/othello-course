@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3講：辺の取り方と安定石 | オセロ講座</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">⚫ オセロ講座</a>
+  <a href="lesson1.html">第1講</a>
+  <a href="lesson2.html">第2講</a>
+  <a href="lesson3.html" class="active">第3講</a>
+  <a href="lesson4.html">第4講</a>
+  <a href="game.html">対局練習</a>
+</nav>
+
+<div class="lesson-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">トップ</a> › 第3講</div>
+    <h1>辺の取り方と安定石</h1>
+    <p>コーナーを制した後、辺をどう固めるか。「安定石」の概念で終盤を強くなりましょう。</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-body">
+    <div class="lesson-content">
+
+      <h2 id="stable">安定石とは何か？</h2>
+      <p><strong>安定石（stable disc）</strong>とは、ゲームが終わるまで絶対に裏返されることのない石のことです。</p>
+      <p>安定石の条件：あらゆる方向（縦・横・斜め）において、</p>
+      <ul>
+        <li>盤の端まで敷き詰められている、または</li>
+        <li>その方向が全て同色の石で埋まっている</li>
+      </ul>
+      <p>これを全8方向で満たす石が安定石です。コーナーの石は最初から全方向で安全なので、最も安定した石です。</p>
+
+      <div class="callout callout-tip">
+        <div class="callout-icon">🔒</div>
+        <div class="callout-body">
+          <strong>安定石を増やすことが勝利への近道</strong>
+          安定石は終局まで保証された得点です。終盤に相手が大量に裏返しても、安定石は絶対に消えません。
+        </div>
+      </div>
+
+      <h2 id="edge">辺の重要性</h2>
+      <p>辺（盤の端のマス）は内側のマスより価値が高いです。理由は：</p>
+      <ul>
+        <li>端のマスは辺の方向では「端まで続いている」ため、条件が1つ満たされやすい</li>
+        <li>コーナーからつながって安定石になりやすい</li>
+        <li>内側の石のように4〜8方向から挟まれることがない</li>
+      </ul>
+
+      <div class="diagram-wrap">
+        <figure>
+          <div class="board-diagram" id="edge-stable-board"></div>
+          <figcaption>青マス＝安定石（裏返らない）<br>黒がa1コーナーを取り辺を固めた例</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="edge-strategy">辺を取る戦略</h2>
+      <p>辺を取るタイミングと方法にはコツがあります。</p>
+
+      <h3 style="margin:1.5rem 0 0.8rem;font-size:1.1rem;color:var(--accent)">1. 奇数辺・偶数辺の考え方</h3>
+      <p>辺には「コーナー直前」の1マス（C打ちマス）と内側のマスがあります。辺に石を並べていくとき、<strong>コーナーからではなく内側から埋めていく</strong>のが基本です。</p>
+
+      <h3 style="margin:1.5rem 0 0.8rem;font-size:1.1rem;color:var(--accent)">2. 辺の一手取り（ウイング）</h3>
+      <p>辺に1石だけポツンと置いた状態を<strong>「ウイング」</strong>と呼びます。この形は両端に空きがあるため、相手はコーナーを狙えず、自分が後から辺を固められます。</p>
+
+      <div class="diagram-wrap">
+        <figure>
+          <div class="board-diagram" id="wing-board"></div>
+          <figcaption>ウイング：辺に1石だけ（戦略的配置）</figcaption>
+        </figure>
+      </div>
+
+      <h3 style="margin:1.5rem 0 0.8rem;font-size:1.1rem;color:var(--accent)">3. 辺を壊してはいけない</h3>
+      <p>相手が辺に石を並べているとき、無理にそこに割り込もうとすると自分がC打ちやX打ちを強いられる場合があります。<strong>相手の辺を強化してしまう手は打たない</strong>のが基本です。</p>
+
+      <h2 id="internal">内側の石は危ない</h2>
+      <p>盤の内側の石（特に中央付近）は8方向すべてから挟まれる可能性があります。序盤・中盤に内側に多く石を置きすぎると、終盤に大量に裏返される危険があります。</p>
+
+      <div class="callout callout-warn">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <strong>序盤は石数を増やしすぎない</strong>
+          序盤に石を多く取ることを欲張ると、相手に手の選択肢が増え、中盤以降に大量に裏返されます。少ない石数でも「安全な位置に置かれた石」の方が価値があります。
+        </div>
+      </div>
+
+      <h2 id="practice">安定石チェックの習慣</h2>
+      <p>手を打つ前に「この石は将来裏返されるか？」を考える習慣をつけましょう。手順：</p>
+      <ol>
+        <li>打とうとしているマスから8方向を確認</li>
+        <li>各方向に相手の石が続いた先に空白があるか？</li>
+        <li>空白があれば、その方向からは将来裏返される可能性がある</li>
+        <li>全方向安全なら安定石になる</li>
+      </ol>
+
+      <div class="mt-2" style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="lesson4.html" class="btn btn-primary">次の講義へ →</a>
+        <a href="lesson2.html" class="btn btn-secondary">← 第2講に戻る</a>
+      </div>
+
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h4>講座一覧</h4>
+        <div class="sidebar-nav">
+          <a href="lesson1.html">📖 第1講：基本ルール</a>
+          <a href="lesson2.html">🎯 第2講：コーナー戦略</a>
+          <a href="lesson3.html" class="current">🔒 第3講：辺と安定石</a>
+          <a href="lesson4.html">🧮 第4講：開放度・偶奇</a>
+          <a href="game.html">🎮 対局練習</a>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
+        <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.5rem;">進捗 3/4</p>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>この講義のポイント</h4>
+        <ul class="hint-list">
+          <li><span class="hint-icon">🔒</span>安定石は永遠の得点</li>
+          <li><span class="hint-icon">📐</span>辺は内側より安全</li>
+          <li><span class="hint-icon">🪶</span>ウイング配置は有利</li>
+          <li><span class="hint-icon">⚡</span>序盤は石を取りすぎない</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>今日から強くなれるオセロ講座</footer>
+
+<script>
+(function() {
+  // 安定石の例（黒がa1から辺を固めた）
+  const esb = document.getElementById('edge-stable-board');
+  const stable = new Set([0,1,2,3,4,8,16,24]);
+  const black = new Set([0,1,2,3,4,8,16,24,27,28,29,36]);
+  const white = new Set([18,19,20,35,44,45]);
+  for(let i=0;i<64;i++){
+    const c=document.createElement('div');c.className='bd-cell';
+    if(stable.has(i)){c.classList.add('corner');}
+    if(black.has(i)||white.has(i)){
+      const s=document.createElement('div');
+      s.className='bd-stone '+(black.has(i)?'b':'w');
+      c.appendChild(s);
+    }
+    esb.appendChild(c);
+  }
+
+  // ウイング
+  const wb = document.getElementById('wing-board');
+  const wingBlack = new Set([3,27,36]);
+  const wingWhite = new Set([28,35]);
+  for(let i=0;i<64;i++){
+    const c=document.createElement('div');c.className='bd-cell';
+    if([0,7,56,63].includes(i))c.classList.add('corner');
+    if(wingBlack.has(i)||wingWhite.has(i)){
+      const s=document.createElement('div');
+      s.className='bd-stone '+(wingBlack.has(i)?'b':'w');
+      c.appendChild(s);
+    }
+    wb.appendChild(c);
+  }
+})();
+</script>
+</body>
+</html>

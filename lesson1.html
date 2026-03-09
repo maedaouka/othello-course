@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1講：基本ルールと盤面の見方 | オセロ講座</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">⚫ オセロ講座</a>
+  <a href="lesson1.html" class="active">第1講</a>
+  <a href="lesson2.html">第2講</a>
+  <a href="lesson3.html">第3講</a>
+  <a href="lesson4.html">第4講</a>
+  <a href="game.html">対局練習</a>
+</nav>
+
+<div class="lesson-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">トップ</a> › 第1講</div>
+    <h1>基本ルールと盤面の見方</h1>
+    <p>オセロのゲームの流れと基本ルールを完全に理解しましょう。ここが土台です。</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-body">
+    <div class="lesson-content">
+
+      <h2 id="board">盤面の構造</h2>
+      <p>オセロは<strong>8×8＝64マス</strong>の盤上で行われます。縦をa〜h、横を1〜8と呼ぶことが多いですが、本講座では位置を「列・行」で説明します。</p>
+      <p>ゲーム開始時、盤の中央4マスに白黒2個ずつ、斜めに置かれた状態からスタートします。</p>
+
+      <div class="diagram-wrap">
+        <figure>
+          <!-- 初期配置 -->
+          <div class="board-diagram" id="init-board"></div>
+          <figcaption>ゲーム開始時の配置（中央4マス）</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="rule">基本ルール</h2>
+      <ol>
+        <li>黒が先手。交互に石を1個ずつ置く。</li>
+        <li>石は<strong>相手の石を1個以上挟む場所</strong>にしか置けない。</li>
+        <li>挟んだ相手の石はすべて<strong>自分の色に裏返す</strong>。</li>
+        <li>置ける場所がなければ<strong>パス</strong>。連続パスになったらゲーム終了。</li>
+        <li>盤が全部埋まったらゲーム終了。石の多い方の勝ち。</li>
+      </ol>
+
+      <div class="callout callout-tip">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <strong>「挟む」とは？</strong>
+          石を置いた位置から直線（縦・横・斜め8方向）に向かって、相手の石が1個以上続いた後に自分の石があれば、その相手の石を挟んでいます。
+        </div>
+      </div>
+
+      <h2 id="move-example">石を置く例</h2>
+      <p>下図の状態で黒番。<span class="text-green">●の場所</span>は黒が合法手を打てる場所です。例えば左上の合法手に打つと、間の白石が裏返ります。</p>
+
+      <div class="diagram-wrap">
+        <figure>
+          <div class="board-diagram" id="example-board"></div>
+          <figcaption>黒番。緑マスに打てる</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="directions">8方向すべてをチェック</h2>
+      <p>石を置くとき、<strong>8方向すべて</strong>に向かってチェックが行われます。複数方向で同時に挟んでいれば、そのすべてが裏返ります。これが大量取りのチャンスです。</p>
+
+      <div class="callout callout-warn">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <strong>よくある間違い</strong>
+          挟んでいない石は裏返りません。「隣にあるだけ」では裏返せないので注意。
+        </div>
+      </div>
+
+      <h2 id="pass">パスのルール</h2>
+      <p>合法手が1つもない場合は<strong>強制パス</strong>です。相手にターンが移ります。パスは恥ずかしいことではなく、戦略上発生することもあります。</p>
+      <p>両者とも合法手がなくなった時点でゲーム終了。盤面が64マス埋まらなくても終わることがあります。</p>
+
+      <h2 id="end">終局と勝敗</h2>
+      <p>終局時、<strong>自分の色の石が多い方</strong>が勝ちです。1石差でも勝ちは勝ち。できるだけ多くの石を確保することが目標です。</p>
+
+      <div class="callout callout-tip">
+        <div class="callout-icon">🏆</div>
+        <div class="callout-body">
+          <strong>重要な考え方</strong>
+          序盤・中盤に石が多くても、終盤に大量に裏返されて負けるのがオセロの醍醐味。「今の石数」より「最終的な石数」が大事です。
+        </div>
+      </div>
+
+      <div class="mt-2" style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="lesson2.html" class="btn btn-primary">次の講義へ →</a>
+        <a href="game.html" class="btn btn-secondary">対局で試す</a>
+      </div>
+
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h4>講座一覧</h4>
+        <div class="sidebar-nav">
+          <a href="lesson1.html" class="current">📖 第1講：基本ルール</a>
+          <a href="lesson2.html">🎯 第2講：コーナー戦略</a>
+          <a href="lesson3.html">🔒 第3講：辺と安定石</a>
+          <a href="lesson4.html">🧮 第4講：開放度・偶奇</a>
+          <a href="game.html">🎮 対局練習</a>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:25%"></div></div>
+        <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.5rem;">進捗 1/4</p>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>この講義のポイント</h4>
+        <ul class="hint-list">
+          <li><span class="hint-icon">⚫</span>黒先手、8×8盤</li>
+          <li><span class="hint-icon">🔄</span>挟んで裏返す</li>
+          <li><span class="hint-icon">⏭️</span>置けなければパス</li>
+          <li><span class="hint-icon">🏁</span>石が多い方の勝ち</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>今日から強くなれるオセロ講座</footer>
+
+<script>
+// 初期盤面
+(function() {
+  const init = document.getElementById('init-board');
+  const W = 2, B = 1, E = 0;
+  const data = new Array(64).fill(E);
+  data[27]=W; data[28]=B; data[35]=B; data[36]=W;
+  data.forEach((v, i) => {
+    const cell = document.createElement('div');
+    cell.className = 'bd-cell';
+    if (v !== E) {
+      const s = document.createElement('div');
+      s.className = 'bd-stone ' + (v===B?'b':'w');
+      cell.appendChild(s);
+    }
+    init.appendChild(cell);
+  });
+
+  // 例示盤面
+  const ex = document.getElementById('example-board');
+  const board2 = new Array(64).fill(E);
+  board2[27]=W; board2[28]=B; board2[35]=B; board2[36]=W;
+  const validMoves = [20, 29, 34, 43];
+  board2.forEach((v, i) => {
+    const cell = document.createElement('div');
+    cell.className = 'bd-cell';
+    if (validMoves.includes(i)) {
+      cell.classList.add('highlight');
+      const dot = document.createElement('div');
+      dot.className = 'bd-dot';
+      cell.appendChild(dot);
+    } else if (v !== E) {
+      const s = document.createElement('div');
+      s.className = 'bd-stone ' + (v===B?'b':'w');
+      cell.appendChild(s);
+    }
+    ex.appendChild(cell);
+  });
+})();
+</script>
+</body>
+</html>

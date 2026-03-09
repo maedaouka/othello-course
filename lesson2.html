@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2講：コーナーを制する者が勝つ | オセロ講座</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">⚫ オセロ講座</a>
+  <a href="lesson1.html">第1講</a>
+  <a href="lesson2.html" class="active">第2講</a>
+  <a href="lesson3.html">第3講</a>
+  <a href="lesson4.html">第4講</a>
+  <a href="game.html">対局練習</a>
+</nav>
+
+<div class="lesson-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">トップ</a> › 第2講</div>
+    <h1>コーナーを制する者が勝つ</h1>
+    <p>オセロで最も重要な概念「四隅の支配」と、それを実現するための考え方を学びます。</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-body">
+    <div class="lesson-content">
+
+      <h2 id="why-corner">なぜコーナーがそんなに大事なのか？</h2>
+      <p>盤上の64マスすべてに「重要度」があります。その中で<strong>四隅（a1, a8, h1, h8）</strong>は飛び抜けて価値が高い。理由は単純です。</p>
+
+      <div class="callout callout-tip">
+        <div class="callout-icon">🏛️</div>
+        <div class="callout-body">
+          <strong>コーナーの石は永遠に裏返されない</strong>
+          角に置かれた石は、どんな方向からも挟まれることがありません。ゲームが終わるまでずっとそのままです。
+        </div>
+      </div>
+
+      <p>コーナーを取ると：</p>
+      <ul>
+        <li>その石は「安定石」として確定する</li>
+        <li>そこから辺や内部の石を安定化できる</li>
+        <li>相手の手を制限できる</li>
+      </ul>
+
+      <div class="diagram-wrap">
+        <figure>
+          <div class="board-diagram" id="corner-board"></div>
+          <figcaption>青マス＝コーナー（絶対に裏返されない）</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="x-square">絶対NG！X打ちの罠</h2>
+      <p>コーナーの<strong>斜め隣</strong>のマス（b2, b7, g2, g7）を<strong>「X打ち」</strong>と呼びます。</p>
+
+      <div class="callout callout-danger">
+        <div class="callout-icon">🚨</div>
+        <div class="callout-body">
+          <strong>X打ちは原則禁忌</strong>
+          ここに打つと、相手がコーナーを取れる局面が生まれやすくなります。初心者が最も気をつけるべき場所です。
+        </div>
+      </div>
+
+      <div class="diagram-wrap">
+        <figure>
+          <div class="board-diagram" id="x-board"></div>
+          <figcaption>赤マス＝X打ち（危険）</figcaption>
+        </figure>
+        <div style="max-width:280px;font-size:0.9rem;color:var(--text-dim);">
+          <p style="margin-bottom:0.5rem;">X打ちに黒が打ってしまうと、隣のコーナーから相手（白）に黒を挟まれるルートが生まれます。</p>
+          <p>「なんでこのマスが駄目なの？」と感じる間は、まだX打ちの危険を実感できていない証拠。実際に対局して痛い目に遭うと覚えます。</p>
+        </div>
+      </div>
+
+      <h2 id="c-square">要注意！C打ちも危険</h2>
+      <p>コーナーと<strong>辺で隣接するマス</strong>（a2, b1, a7, h1側など）を<strong>「C打ち」</strong>と呼びます。X打ちほどではないですが、状況によっては相手にコーナーを渡す原因になります。</p>
+
+      <div class="diagram-wrap">
+        <figure>
+          <div class="board-diagram" id="c-board"></div>
+          <figcaption>黄マス＝C打ち（状況注意）</figcaption>
+        </figure>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <strong>C打ちの判断基準</strong>
+          C打ちは「相手がコーナーを取れるか」で判断します。相手がコーナーを取れない状況（コーナーが埋まっている・相手に合法手がない）なら問題ありません。
+        </div>
+      </div>
+
+      <h2 id="get-corner">コーナーを取るための準備</h2>
+      <p>コーナーは自分から急いで取りに行くより、<strong>相手にX打ち・C打ちを強制させる</strong>ことで取れます。</p>
+      <ol>
+        <li>自分はX打ち・C打ちを避ける</li>
+        <li>相手に「打てる場所がX打ち・C打ちしかない」状況を作る</li>
+        <li>相手がやむなくX打ち・C打ちをしたら、コーナーが取れる</li>
+      </ol>
+
+      <div class="callout callout-tip">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <strong>コーナー付近の位置重要度</strong>
+          下の表は各マスの評価値（大きいほど良い場所）です。コーナー＝120に対し、X打ち＝−40と極端にマイナスなのがわかります。
+        </div>
+      </div>
+
+      <div class="weight-board" id="weight-board"></div>
+      <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.5rem;">※AIが使う位置評価テーブル。コーナー＝120、X打ち位置＝−40</p>
+
+      <div class="mt-2" style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="lesson3.html" class="btn btn-primary">次の講義へ →</a>
+        <a href="lesson1.html" class="btn btn-secondary">← 第1講に戻る</a>
+      </div>
+
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h4>講座一覧</h4>
+        <div class="sidebar-nav">
+          <a href="lesson1.html">📖 第1講：基本ルール</a>
+          <a href="lesson2.html" class="current">🎯 第2講：コーナー戦略</a>
+          <a href="lesson3.html">🔒 第3講：辺と安定石</a>
+          <a href="lesson4.html">🧮 第4講：開放度・偶奇</a>
+          <a href="game.html">🎮 対局練習</a>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:50%"></div></div>
+        <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.5rem;">進捗 2/4</p>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>この講義のポイント</h4>
+        <ul class="hint-list">
+          <li><span class="hint-icon">🏛️</span>コーナーは永遠に安全</li>
+          <li><span class="hint-icon">🚨</span>X打ちは原則禁忌</li>
+          <li><span class="hint-icon">⚠️</span>C打ちは状況で判断</li>
+          <li><span class="hint-icon">♟️</span>相手にX/Cを強制する</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>今日から強くなれるオセロ講座</footer>
+
+<script>
+(function() {
+  const B=1,W=2,E=0;
+
+  function makeBoard(el, marks) {
+    for (let i=0;i<64;i++) {
+      const cell = document.createElement('div');
+      cell.className = 'bd-cell';
+      const m = marks[i];
+      if (m === 'b' || m === 'w') {
+        const s = document.createElement('div');
+        s.className = 'bd-stone ' + m;
+        cell.appendChild(s);
+      } else if (m === 'corner') {
+        cell.classList.add('corner');
+      } else if (m === 'x') {
+        cell.classList.add('danger');
+      } else if (m === 'c') {
+        cell.classList.add('highlight');
+        cell.style.background = '#4a3a10';
+      }
+      el.appendChild(cell);
+    }
+  }
+
+  // コーナー表示
+  const corners = {};
+  [0,7,56,63].forEach(i => corners[i]='corner');
+  [27,36].forEach(i => corners[i]='w');
+  [28,35].forEach(i => corners[i]='b');
+  const cb = document.getElementById('corner-board');
+  for(let i=0;i<64;i++){const c=document.createElement('div');c.className='bd-cell';const m=corners[i];if(m==='corner'){c.classList.add('corner');}else if(m==='b'||m==='w'){const s=document.createElement('div');s.className='bd-stone '+m;c.appendChild(s);}cb.appendChild(c);}
+
+  // X打ち
+  const xm = {};
+  [0,7,56,63].forEach(i=>xm[i]='corner');
+  [9,14,49,54].forEach(i=>xm[i]='x');
+  [27,36].forEach(i=>xm[i]='w');[28,35].forEach(i=>xm[i]='b');
+  const xb = document.getElementById('x-board');
+  for(let i=0;i<64;i++){const c=document.createElement('div');c.className='bd-cell';const m=xm[i];if(m==='corner')c.classList.add('corner');else if(m==='x')c.classList.add('danger');else if(m==='b'||m==='w'){const s=document.createElement('div');s.className='bd-stone '+m;c.appendChild(s);}xb.appendChild(c);}
+
+  // C打ち
+  const cm = {};
+  [0,7,56,63].forEach(i=>cm[i]='corner');
+  [9,14,49,54].forEach(i=>cm[i]='x');
+  [1,6,8,15,48,55,57,62].forEach(i=>cm[i]='c');
+  [27,36].forEach(i=>cm[i]='w');[28,35].forEach(i=>cm[i]='b');
+  const cb2 = document.getElementById('c-board');
+  for(let i=0;i<64;i++){const c=document.createElement('div');c.className='bd-cell';const m=cm[i];if(m==='corner')c.classList.add('corner');else if(m==='x')c.classList.add('danger');else if(m==='c'){c.style.background='#4a3a10';}else if(m==='b'||m==='w'){const s=document.createElement('div');s.className='bd-stone '+m;c.appendChild(s);}cb2.appendChild(c);}
+
+  // 位置評価テーブル
+  const weights = [
+    120,-20, 20,  5,  5, 20,-20,120,
+    -20,-40, -5, -5, -5, -5,-40,-20,
+     20, -5, 15,  3,  3, 15, -5, 20,
+      5, -5,  3,  3,  3,  3, -5,  5,
+      5, -5,  3,  3,  3,  3, -5,  5,
+     20, -5, 15,  3,  3, 15, -5, 20,
+    -20,-40, -5, -5, -5, -5,-40,-20,
+    120,-20, 20,  5,  5, 20,-20,120,
+  ];
+  const wb = document.getElementById('weight-board');
+  weights.forEach(v => {
+    const c = document.createElement('div');
+    c.className = 'wb-cell';
+    c.textContent = v;
+    if (v >= 100) c.style.background = '#1a4a80';
+    else if (v >= 15) c.style.background = '#1a4a2a';
+    else if (v >= 3) c.style.background = '#1a3a20';
+    else if (v < -30) c.style.background = '#5a1010';
+    else if (v < 0) c.style.background = '#3a1515';
+    wb.appendChild(c);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4講：開放度理論と偶奇（パリティ） | オセロ講座</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">⚫ オセロ講座</a>
+  <a href="lesson1.html">第1講</a>
+  <a href="lesson2.html">第2講</a>
+  <a href="lesson3.html">第3講</a>
+  <a href="lesson4.html" class="active">第4講</a>
+  <a href="game.html">対局練習</a>
+</nav>
+
+<div class="lesson-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">トップ</a> › 第4講</div>
+    <h1>開放度理論と偶奇（パリティ）</h1>
+    <p>中盤を支配する「開放度」と、終盤の石数を決める「偶奇理論」。この2つで一気に強くなれます。</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-body">
+    <div class="lesson-content">
+
+      <h2 id="openness">開放度理論</h2>
+      <p><strong>開放度（openness）</strong>とは、石を置いたときに裏返る石それぞれの「周囲8マスにある空白の数の合計」です。</p>
+      <p>開放度が<strong>低い手</strong>ほど良い手です。</p>
+
+      <div class="callout callout-tip">
+        <div class="callout-icon">🧠</div>
+        <div class="callout-body">
+          <strong>開放度が低い＝相手の選択肢を狭める</strong>
+          開放度が低い手は、裏返した石の周囲に空白が少ない＝相手が次に打てる場所が増えにくい、ということです。手の広がりを抑制できます。
+        </div>
+      </div>
+
+      <h3 style="margin:1.5rem 0 0.8rem;font-size:1.1rem;color:var(--accent)">開放度の計算例</h3>
+      <p>手Aで石を打つと3枚裏返り、それぞれ周囲に空白が2, 1, 3個ある → 開放度 = 2+1+3 = <strong>6</strong></p>
+      <p>手Bで石を打つと3枚裏返り、それぞれ周囲に空白が1, 0, 1個ある → 開放度 = 1+0+1 = <strong>2</strong></p>
+      <p>この場合、手Bの方が開放度が低く、良い手です。</p>
+
+      <div class="diagram-wrap">
+        <figure>
+          <div class="board-diagram" id="open-board"></div>
+          <figcaption>各石の周囲空白数（数字）が開放度の要素</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="parity">偶奇理論（パリティ）</h2>
+      <p>終盤（残り10〜15手程度）になると、<strong>空白マスのエリアが分断</strong>されていきます。このとき、「最後に打つのが自分か相手か」が石数に大きく影響します。</p>
+
+      <div class="callout callout-tip">
+        <div class="callout-icon">🎲</div>
+        <div class="callout-body">
+          <strong>偶奇の基本ルール</strong>
+          空白エリアが奇数マスなら、そのエリアに「最後に打つ権利」が生まれます。複数の奇数エリアを自分が締めくくれるほど有利です。
+        </div>
+      </div>
+
+      <h3 style="margin:1.5rem 0 0.8rem;font-size:1.1rem;color:var(--accent)">具体的な偶奇のイメージ</h3>
+      <ul>
+        <li><strong>奇数エリア：</strong>そのエリアへの最後の1手は自分が打つ可能性が高い</li>
+        <li><strong>偶数エリア：</strong>最後の1手は相手が打つ可能性が高い</li>
+        <li>奇数エリアが多い方が「最後の手」の主導権を持ちやすい</li>
+      </ul>
+
+      <div class="callout callout-warn">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <strong>偶奇理論は感覚が大事</strong>
+          正確な読みには経験が必要ですが、「残りが奇数のエリアをできるだけ多く作る」という感覚で考えると、終盤の石数管理が上手くなります。
+        </div>
+      </div>
+
+      <h2 id="mobility">手数（モビリティ）を保つ</h2>
+      <p><strong>モビリティ</strong>とは「自分が打てる手の数」のことです。モビリティが高いほど選択肢が多く、相手に有利な展開を強制されにくくなります。</p>
+      <ul>
+        <li>自分のモビリティを高く保つ</li>
+        <li>相手のモビリティを低く抑える</li>
+        <li>相手をパスに追い込めれば大きなアドバンテージ</li>
+      </ul>
+
+      <div class="callout callout-tip">
+        <div class="callout-icon">♟️</div>
+        <div class="callout-body">
+          <strong>石を少なく保つことがモビリティ管理</strong>
+          石が少ないと相手が打てる場所が限られます。序盤・中盤はあえて石数を増やしすぎず、相手の手を制限することが重要です。
+        </div>
+      </div>
+
+      <h2 id="summary">全4講のまとめ</h2>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin:1.5rem 0;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border);">
+              <th style="text-align:left;padding:0.6rem;color:var(--text-dim);">フェーズ</th>
+              <th style="text-align:left;padding:0.6rem;color:var(--text-dim);">重要な概念</th>
+              <th style="text-align:left;padding:0.6rem;color:var(--text-dim);">目標</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:0.6rem;">序盤</td>
+              <td style="padding:0.6rem;color:var(--green-light);">X打ち回避・モビリティ</td>
+              <td style="padding:0.6rem;">コーナー取得の準備</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:0.6rem;">中盤</td>
+              <td style="padding:0.6rem;color:var(--accent);">開放度・コーナー争い</td>
+              <td style="padding:0.6rem;">辺・コーナーの確保</td>
+            </tr>
+            <tr>
+              <td style="padding:0.6rem;">終盤</td>
+              <td style="padding:0.6rem;color:var(--accent2);">偶奇・安定石カウント</td>
+              <td style="padding:0.6rem;">最終石数の最大化</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-tip">
+        <div class="callout-icon">🚀</div>
+        <div class="callout-body">
+          <strong>これだけ覚えれば初心者卒業！</strong>
+          ①X打ちしない ②コーナーを狙う ③開放度の低い手を選ぶ。この3点を意識するだけで、何も考えていない相手には確実に勝てるようになります。
+        </div>
+      </div>
+
+      <div class="mt-2" style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="game.html" class="btn btn-primary">🎮 AIと対局して試す</a>
+        <a href="lesson3.html" class="btn btn-secondary">← 第3講に戻る</a>
+      </div>
+
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h4>講座一覧</h4>
+        <div class="sidebar-nav">
+          <a href="lesson1.html">📖 第1講：基本ルール</a>
+          <a href="lesson2.html">🎯 第2講：コーナー戦略</a>
+          <a href="lesson3.html">🔒 第3講：辺と安定石</a>
+          <a href="lesson4.html" class="current">🧮 第4講：開放度・偶奇</a>
+          <a href="game.html">🎮 対局練習</a>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+        <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.5rem;">全4講 完了！</p>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>この講義のポイント</h4>
+        <ul class="hint-list">
+          <li><span class="hint-icon">📉</span>開放度は低い手が良い</li>
+          <li><span class="hint-icon">🎲</span>奇数エリアを多く持つ</li>
+          <li><span class="hint-icon">♟️</span>モビリティを高く保つ</li>
+          <li><span class="hint-icon">🚀</span>3原則で初心者卒業</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>今日から強くなれるオセロ講座</footer>
+
+<script>
+(function(){
+  const ob = document.getElementById('open-board');
+  const black = new Set([27,28,35,36,19,20,29]);
+  const white = new Set([21,22,43]);
+  for(let i=0;i<64;i++){
+    const c=document.createElement('div');c.className='bd-cell';
+    if(black.has(i)||white.has(i)){
+      const s=document.createElement('div');
+      s.className='bd-stone '+(black.has(i)?'b':'w');
+      c.appendChild(s);
+    }
+    ob.appendChild(c);
+  }
+})();
+</script>
+</body>
+</html>
