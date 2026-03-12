@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>参考資料まとめ | オセロ講座</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.ref-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.ref-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+.ref-card .meta { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 0.7rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.ref-card p { font-size: 0.88rem; color: #c0c4d8; margin-bottom: 0.6rem; }
+.ref-card a { font-size: 0.85rem; color: var(--green-light); }
+.tag {
+  display: inline-block; padding: 0.15rem 0.6rem;
+  border-radius: 12px; font-size: 0.72rem; font-weight: 700;
+}
+.tag-book { background: #1a3a50; color: #60b4e0; }
+.tag-web  { background: #1a3a28; color: var(--green-light); }
+.tag-paper{ background: #2e2010; color: var(--accent); }
+.tag-ai   { background: #2a1a3a; color: #c080ff; }
+.verdict {
+  background: #1a2e20; border: 1px solid #2a5035;
+  border-radius: 12px; padding: 1.2rem 1.5rem; margin-bottom: 2rem;
+}
+.verdict h3 { color: var(--green-light); margin-bottom: 0.6rem; }
+.verdict p { font-size: 0.9rem; color: #c0c4d8; margin-bottom: 0.4rem; }
+.section-head {
+  font-size: 1.3rem; font-weight: 800;
+  margin: 2.5rem 0 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--green-light);
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="../index.html">⚫ オセロ講座</a>
+  <a href="../lesson1.html">第1講</a>
+  <a href="../lesson2.html">第2講</a>
+  <a href="../lesson3.html">第3講</a>
+  <a href="../lesson4.html">第4講</a>
+  <a href="../game.html">対局練習</a>
+</nav>
+
+<div class="lesson-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">トップ</a> › 参考資料</div>
+    <h1>参考資料まとめ</h1>
+    <p>本講座の内容の根拠と、さらに深く学びたい人のためのリソース集。</p>
+  </div>
+</div>
+
+<div class="container" style="padding: 3rem 2rem;">
+
+  <!-- 講座内容の検証 -->
+  <div class="verdict">
+    <h3>✅ 本講座の内容は正確か？</h3>
+    <p>本講座の構成（コーナー優先 → X打ち回避 → 開放度理論 → パリティ）は、以下の複数の権威ある資料と照合した結果、<strong>内容・順序ともに正確</strong>と確認されました。</p>
+    <p>・2001年世界王者 Brian Rose の著書と順序が一致</p>
+    <p>・3度の世界王者 村上健 九段の著書と順序が一致</p>
+    <p>・日本オセロ連盟公式初心者講座の構成と一致</p>
+    <p>・高校生研究論文による統計データ：開放度理論で勝率が有意に上昇（発展版で約80%）</p>
+    <p style="margin-top:0.8rem;color:var(--accent);">⚠️ 本講座でカバーしていない発展トピック：定石（序盤）、余裕手、逆偶数理論（→ 下記書籍で学習推奨）</p>
+  </div>
+
+  <!-- 書籍 -->
+  <div class="section-head">📚 書籍</div>
+
+  <div class="ref-card">
+    <h3>Othello: A Minute to Learn... A Lifetime to Master</h3>
+    <div class="meta">
+      <span class="tag tag-book">書籍 PDF</span>
+      <span>著：Brian Rose（2001年世界チャンピオン・17度の米国王者）</span>
+      <span>英語 / 162ページ</span>
+    </div>
+    <p>英語圏で最も権威ある戦略書。コーナー・安定石・フロンティア・辺・偶数理論・定石・終盤カウントを段階的に解説。世界オセロ連盟も推薦。</p>
+    <a href="Brian_Rose_Othello_A_Minute_to_Learn.pdf">📄 ダウンロード済みPDFを開く</a>
+    &nbsp;|&nbsp;
+    <a href="https://www.ffothello.org/livres/othello-book-Brian-Rose.pdf" target="_blank">🔗 原本URL</a>
+  </div>
+
+  <div class="ref-card">
+    <h3>史上最強カラー図解 強くなるオセロ</h3>
+    <div class="meta">
+      <span class="tag tag-book">書籍</span>
+      <span>著：村上健（3度の世界チャンピオン）</span>
+      <span>日本語 / ナツメ社</span>
+    </div>
+    <p>開放度理論を日本に広めた最重要書籍。余裕手・偶数理論・定石・やすり攻め・ウイング攻めなどを豊富な棋譜で解説。初〜中級者に最も推薦できる日本語書籍。</p>
+    <a href="https://www.amazon.co.jp/dp/4816350330" target="_blank">🔗 Amazon で見る</a>
+  </div>
+
+  <div class="ref-card">
+    <h3>現代オセロの最新理論</h3>
+    <div class="meta">
+      <span class="tag tag-book">書籍</span>
+      <span>著：佐谷哲（七段・京都大学大学院出身）</span>
+      <span>日本語 / マイナビ出版</span>
+    </div>
+    <p>偶数理論・逆偶数理論・争点理論・辺理論など高度な理論を体系化。中級者が上級者を目指す際に必読の一冊。</p>
+    <a href="https://book.mynavi.jp/ec/products/detail/id=101518" target="_blank">🔗 マイナビ出版で見る</a>
+  </div>
+
+  <!-- Webサイト -->
+  <div class="section-head">🌐 Webサイト（日本語）</div>
+
+  <div class="ref-card">
+    <h3>日本オセロ連盟 公式初心者講座</h3>
+    <div class="meta">
+      <span class="tag tag-web">公式サイト</span>
+      <span>日本オセロ連盟（Othello! JAPAN）</span>
+    </div>
+    <p>「1分で習得、一生で極める」をモットーとする公式講座。基礎→序盤→中盤（辺の理論）→終盤（確定石・確定線）の順で構成。本講座の内容と高い一致度。</p>
+    <a href="https://www.othello.org/lesson/lesson/" target="_blank">🔗 サイトを開く</a>
+  </div>
+
+  <div class="ref-card">
+    <h3>オセロ・リバーシの勝ち方（bassy84.net）</h3>
+    <div class="meta">
+      <span class="tag tag-web">解説サイト</span>
+      <span>日本語の定番攻略サイト</span>
+    </div>
+    <p>開放度理論・X打ち・C打ち・偶数理論・定石など幅広いトピックを実戦的に解説。記事数が多く初〜中級者に信頼度が高い。</p>
+    <a href="https://bassy84.net/" target="_blank">🔗 サイトを開く</a>
+    &nbsp;|&nbsp;
+    <a href="https://bassy84.net/othello-kaihoudo.html" target="_blank">🔗 開放度理論の記事</a>
+  </div>
+
+  <div class="ref-card">
+    <h3>発展的開放度理論の解説（uguisu.skr.jp）</h3>
+    <div class="meta">
+      <span class="tag tag-web">解説サイト</span>
+    </div>
+    <p>次手の開放度まで考慮する「発展的開放度理論」を解説。中級者以上の精度向上に有効。</p>
+    <a href="https://uguisu.skr.jp/othello/4-2.html" target="_blank">🔗 サイトを開く</a>
+  </div>
+
+  <!-- Webサイト（英語） -->
+  <div class="section-head">🌐 Webサイト（英語）</div>
+
+  <div class="ref-card">
+    <h3>Reversi/Strategy - Wikibooks</h3>
+    <div class="meta">
+      <span class="tag tag-web">Wiki</span>
+      <span>英語</span>
+    </div>
+    <p>コーナー・Xマス・Cマス・モビリティ・パリティ・安定石の定義を網羅した英語の定番解説。各戦略の概念整理に最適。</p>
+    <a href="https://en.wikibooks.org/wiki/Reversi/Strategy" target="_blank">🔗 サイトを開く</a>
+  </div>
+
+  <!-- 論文・研究 -->
+  <div class="section-head">📄 論文・研究</div>
+
+  <div class="ref-card">
+    <h3>開放度理論から見た勝率と最善手（高校生研究論文）</h3>
+    <div class="meta">
+      <span class="tag tag-paper">論文</span>
+      <span>光泉中学・高等学校 数学研究班</span>
+      <span>日本語</span>
+    </div>
+    <p>開放度理論の有効性を統計的に検証。「発展的開放度理論（次手の開放度も考慮）で勝率が約80%に上昇」というデータを提示。本講座の内容が統計的に有効であることを裏付ける。</p>
+    <a href="開放度理論の統計的検証_高校生論文.pdf">📄 ダウンロード済みPDFを開く</a>
+  </div>
+
+  <div class="ref-card">
+    <h3>Othello is Solved（オセロ完全解析・2023年）</h3>
+    <div class="meta">
+      <span class="tag tag-paper">arXiv論文</span>
+      <span>著：瀧澤弘樹（Preferred Networks）</span>
+      <span>英語 / 2023年10月</span>
+    </div>
+    <p>2023年、完全なコンピュータ解析によりオセロは「最善手同士なら引き分け」と証明された。改変Edaxを使用。オセロの理論的限界を示す歴史的論文。</p>
+    <a href="https://arxiv.org/abs/2310.19387" target="_blank">🔗 arXivで見る</a>
+  </div>
+
+  <div class="ref-card">
+    <h3>A World-Championship-Level Othello Program（IAGO, 1982年）</h3>
+    <div class="meta">
+      <span class="tag tag-paper">学術論文</span>
+      <span>著：Paul Rosenbloom（Carnegie Mellon大）</span>
+      <span>英語 / Artificial Intelligence誌掲載</span>
+    </div>
+    <p>エッジ安定性・モビリティ・フロンティアディスク最小化という評価関数の基礎を確立した先駆的研究。「開放度理論」の学術的起源。</p>
+    <a href="https://www.semanticscholar.org/paper/A-World-Championship-Level-Othello-Program-Rosenbloom/3979633ec4a0609931f3816f7bc3d3d3de80007c" target="_blank">🔗 Semantic Scholarで見る</a>
+  </div>
+
+  <!-- AIの歴史 -->
+  <div class="section-head">🤖 オセロAIの歴史</div>
+
+  <div class="ref-card">
+    <h3>Logistello（1993〜1997）</h3>
+    <div class="meta">
+      <span class="tag tag-ai">AI</span>
+      <span>開発：Michael Buro（当時NEC Research）</span>
+    </div>
+    <p>1997年に世界チャンピオン村上健に6-0で完勝し、人間の世界最強を超えたプログラム。多層パターン評価・ProbCut・ロジスティック回帰を採用。</p>
+    <a href="https://skatgame.net/mburo/log.html" target="_blank">🔗 公式ページ</a>
+  </div>
+
+  <div class="ref-card">
+    <h3>Egaroucid（2021〜現在）</h3>
+    <div class="meta">
+      <span class="tag tag-ai">AI / オープンソース</span>
+      <span>開発：山下拓人（筑波大）</span>
+    </div>
+    <p>現在最強クラスのオセロAI。CodinGame世界王者（2021・2023・2025年）。本講座のAI実装の参考にもなった評価関数体系を持つ。無料で遊べる。</p>
+    <a href="https://www.egaroucid.nyanyan.dev/en/" target="_blank">🔗 公式サイト</a>
+  </div>
+
+  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center;">
+    <a href="../index.html" class="btn btn-primary">← 講座トップに戻る</a>
+  </div>
+
+</div>
+
+<footer>今日から強くなれるオセロ講座</footer>
+</body>
+</html>
