@@ -222,7 +222,7 @@ nav a:hover, nav a.active {
 /* ===== Board diagrams ===== */
 .board-diagram {
   display: inline-grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 38px);
   gap: 2px;
   background: var(--board-line);
   border: 3px solid var(--board-line);
@@ -324,7 +324,7 @@ nav a:hover, nav a.active {
 /* ===== Position weight table ===== */
 .weight-board {
   display: inline-grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 44px);
   gap: 2px;
   background: #111;
   border: 2px solid #333;
